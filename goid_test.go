@@ -18,7 +18,7 @@ func TestGoid(t *testing.T) {
 			goidRuntime := string(bytes.Split(buf, []byte(" "))[1])
 			goidAsm := fmt.Sprintf("%d", Goid())
 			if goidRuntime != goidAsm {
-				t.Error("goid from runtime is %s, goid from asm is %s", goidRuntime, goidAsm)
+				t.Errorf("goid from runtime is %s, goid from asm is %s", goidRuntime, goidAsm)
 			}
 			wg.Done()
 		}()

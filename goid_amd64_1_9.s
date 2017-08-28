@@ -1,4 +1,4 @@
-// +build !go1.9
+// +build go1.9
 
 #include "textflag.h"
 
@@ -6,6 +6,6 @@
 TEXT ·Goid(SB), NOSPLIT, $0
 	MOVQ TLS, CX
 	MOVQ 0(CX)(TLS*1), BX
-	MOVQ 0xC0(BX), BX
+	MOVQ 0x98(BX), BX
 	MOVQ BX, x+0(FP)
 	RET
